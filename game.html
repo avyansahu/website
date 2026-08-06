@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avyan's Craft — pocket voxel world</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <section class="game-stage" aria-label="Avyan's Craft game">
+        <canvas id="gameCanvas" aria-label="Playable voxel world"></canvas>
+
+        <div class="topbar">
+          <div class="brand-lockup">
+            <div class="brand-mark" aria-hidden="true"><span></span><span></span></div>
+            <div>
+              <p class="eyebrow">a pocket-sized builder</p>
+              <h1>Avyan’s <em>Craft</em></h1>
+            </div>
+          </div>
+          <div class="world-status"><span class="status-dot"></span><span id="statusText">WORLD 01 · SUNNY MEADOW</span></div>
+        </div>
+
+        <div class="crosshair" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+
+        <aside class="how-to panel">
+          <div class="panel-label">FIELD NOTES <span>01</span></div>
+          <p><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> roam the meadow</p>
+          <p><span class="mouse-icon">●</span> click a tile to craft</p>
+          <p><kbd>R</kbd> restore your world</p>
+        </aside>
+
+        <div class="coords panel"><span class="panel-label">POSITION</span><strong id="coords">X 00 · Y 00</strong></div>
+
+        <div class="toast" id="toast" role="status">A fresh patch of earth awaits.</div>
+
+        <div class="bottom-hud">
+          <div class="avatar-card panel">
+            <div class="avatar-art" aria-label="Paper clip character illustration">
+              <span class="clip-outer"></span><span class="clip-inner"></span><span class="clip-head"></span>
+            </div>
+            <div><span class="panel-label">YOUR BUILDER</span><strong>CLIPPY</strong><small>paper-clip / level 01</small></div>
+          </div>
+
+          <div class="hotbar panel" aria-label="Block palette">
+            <button class="slot selected" data-block="grass" aria-label="Grass block"><span class="voxel grass"></span><small>1</small></button>
+            <button class="slot" data-block="sand" aria-label="Sand block"><span class="voxel sand"></span><small>2</small></button>
+            <button class="slot" data-block="stone" aria-label="Stone block"><span class="voxel stone"></span><small>3</small></button>
+            <button class="slot" data-block="flower" aria-label="Flower block"><span class="voxel flower"><i></i></span><small>4</small></button>
+            <div class="hotbar-caption"><span class="panel-label">CARRYING</span><strong id="selectedName">GRASS</strong></div>
+          </div>
+
+          <button class="reset-button panel" id="resetButton"><span>↻</span> NEW PATCH</button>
+        </div>
+      </section>
+    </main>
+    <script src="game.js"></script>
+  </body>
+</html>
